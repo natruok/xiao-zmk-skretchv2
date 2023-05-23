@@ -1,7 +1,7 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_REVXLP
+if SHIELD_skretchv2
 
 config ZMK_KEYBOARD_NAME
     default "skretchv2"
