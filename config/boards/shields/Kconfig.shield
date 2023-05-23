@@ -1,6 +1,6 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_skretchv2
+config SHIELD_SKRETCHV2
     def_bool $(shields_list_contains,skretchv2)
     select SPI
