@@ -59,17 +59,17 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)      RC(3,5)    RC(3,7) RC(3,8) RC(3,9) 
 		
 		col-gpios
 			= <&shifter 12 GPIO_ACTIVE_HIGH>
-      , <&shifter 11 GPIO_ACTIVE_HIGH>
-      , <&shifter 10 GPIO_ACTIVE_HIGH>
-      , <&shifter 9 GPIO_ACTIVE_HIGH>
-      , <&shifter 8 GPIO_ACTIVE_HIGH>
+     			, <&shifter 11 GPIO_ACTIVE_HIGH>
+     			, <&shifter 10 GPIO_ACTIVE_HIGH>
+      			, <&shifter 9 GPIO_ACTIVE_HIGH>
+      			, <&shifter 8 GPIO_ACTIVE_HIGH>
 			, <&shifter 7 GPIO_ACTIVE_HIGH>
 			, <&shifter 6 GPIO_ACTIVE_HIGH>
 			, <&shifter 5 GPIO_ACTIVE_HIGH>
 			, <&shifter 4 GPIO_ACTIVE_HIGH>
 			, <&shifter 3 GPIO_ACTIVE_HIGH>
-      , <&shifter 2 GPIO_ACTIVE_HIGH>
-      , <&shifter 1 GPIO_ACTIVE_HIGH>
+      			, <&shifter 2 GPIO_ACTIVE_HIGH>
+      			, <&shifter 1 GPIO_ACTIVE_HIGH>
 			;
 		
 		row-gpios
