@@ -1,0 +1,8 @@
+file_format: "1"
+id: skretchv2
+Name: skretchv2
+type: shield
+url: https://github.com/WainingForests/xiao-zmk-skretchv2/
+requires: [seeed_xiao]
+features:
+  - keys
