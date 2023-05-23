@@ -58,18 +58,18 @@ RC(2,11) RC(2,10) RC(2,9) RC(2,8) RC(2,7) RC(2,6) RC(2,5) RC(2,4) RC(2,3) RC(2,2
 		diode-direction = "col2row";
 		
 		col-gpios
-			= <&shifter 12 GPIO_ACTIVE_LOW>
-     			, <&shifter 11 GPIO_ACTIVE_LOW>
+			= <&shifter 11 GPIO_ACTIVE_LOW>
      			, <&shifter 10 GPIO_ACTIVE_LOW>
-      			, <&shifter 9 GPIO_ACTIVE_LOW>
+     			, <&shifter 9 GPIO_ACTIVE_LOW>
       			, <&shifter 8 GPIO_ACTIVE_LOW>
-			, <&shifter 7 GPIO_ACTIVE_LOW>
+      			, <&shifter 7 GPIO_ACTIVE_LOW>
 			, <&shifter 6 GPIO_ACTIVE_LOW>
 			, <&shifter 5 GPIO_ACTIVE_LOW>
 			, <&shifter 4 GPIO_ACTIVE_LOW>
 			, <&shifter 3 GPIO_ACTIVE_LOW>
-      			, <&shifter 2 GPIO_ACTIVE_LOW>
+			, <&shifter 2 GPIO_ACTIVE_LOW>
       			, <&shifter 1 GPIO_ACTIVE_LOW>
+      			, <&shifter 0 GPIO_ACTIVE_LOW>
 			;
 		
 		row-gpios
