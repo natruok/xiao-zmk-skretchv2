@@ -1,4 +1,4 @@
-if SHIELD_SKRETCH2
+if SHIELD_SKRETCHV2
 
 config ZMK_KEYBOARD_NAME
     default "skretchv2"
