@@ -255,10 +255,10 @@
 
         L1_Sys {
             bindings = <
-&trans  &ht_kp LC(UP) UP      &none   &none   &none   &kp K_FORWARD  &kp F1  &kp F2  &kp F10  &kp F11  &kp F12  &trans
-&trans  &ht_kp LC(DOWN) DOWN  &none   &none   &none   &kp K_BACK     &none   &none   &none    &kp F5   &kp F6   &trans
-&trans  &none                 &none   &none   &none   &none          &none   &none   &kp F7   &kp F8   &kp F9   &trans
-&trans  &trans                &trans  &trans  &trans  &trans                 &trans  &trans   &trans   &trans   &trans
+&trans  &ht_kp LC(UP) UP      &none   &none   &none   &kp K_FORWARD  &none  &none   &kp F10  &kp F11  &kp F12  &trans
+&trans  &ht_kp LC(DOWN) DOWN  &none   &none   &none   &kp K_BACK     &none  &kp F1  &kp F2   &kp F5   &kp F6   &trans
+&trans  &none                 &none   &none   &none   &none          &none  &none   &kp F7   &kp F8   &kp F9   &trans
+&trans  &trans                &trans  &trans  &trans  &trans                &trans  &trans   &trans   &trans   &trans
             >;
         };
 
