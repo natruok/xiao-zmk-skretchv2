@@ -31,74 +31,75 @@
             key-positions = <3 37>;
         };
 
-        Back_M {
-            bindings = <&kp RG(LEFT_BRACKET)>;
-            key-positions = <42 20>;
-        };
-
-        Fwd_M {
-            bindings = <&kp RG(RIGHT_BRACKET)>;
-            key-positions = <42 21>;
-        };
-
-        align_top {
-            bindings = <&align_top>;
-            key-positions = <25 40>;
-            layers = <2>;
-        };
-
-        align_mid {
-            bindings = <&align_mid>;
-            key-positions = <40 26>;
-            layers = <2>;
-        };
-
-        align_bottom {
-            bindings = <&align_bottom>;
-            key-positions = <40 27>;
-            layers = <2>;
-        };
-
-        top_border {
-            bindings = <&top_border>;
-            key-positions = <13 40>;
-            layers = <2>;
-        };
-
-        bottom_border {
-            bindings = <&bottom_border>;
-            key-positions = <14 40>;
-            layers = <2>;
-        };
-
-        top_thick_bottom_border {
-            bindings = <&top_thick_bottom_border>;
-            key-positions = <1 2>;
-            layers = <2>;
-        };
-
-        F_1 {
-            bindings = <&kp F1>;
-            key-positions = <13 39>;
-            layers = <0>;
-        };
-
         F_2 {
             bindings = <&kp F2>;
-            key-positions = <14 39>;
-            layers = <0>;
+            key-positions = <2 40>;
+        };
+
+        Pivot_Refresh {
+            bindings = <&kp LA(F5)>;
+            key-positions = <40 3>;
         };
 
         F_4 {
             bindings = <&kp F4>;
-            key-positions = <16 39>;
-            layers = <0>;
+            key-positions = <40 4>;
         };
 
-        Pivot_refresh {
-            bindings = <&kp LA(F5)>;
-            key-positions = <15 39>;
-            layers = <0>;
+        F_5 {
+            bindings = <&kp F5>;
+            key-positions = <42 7>;
+        };
+
+        Filter {
+            bindings = <&kp LS(LC(L))>;
+            key-positions = <42 8>;
+        };
+
+        Time {
+            bindings = <&ht_kp LC(SEMI) LC(LS(SEMI))>;
+            key-positions = <42 9>;
+        };
+
+        Downloads {
+            bindings = <&kp LC(LA(D))>;
+            key-positions = <1 39>;
+            layers = <0 1 2>;
+        };
+
+        Pivot {
+            bindings = <&pivot>;
+            key-positions = <1 40>;
+            layers = <3>;
+        };
+
+        Blanks {
+            bindings = <&blanks>;
+            key-positions = <5 40>;
+            layers = <3>;
+        };
+
+        Paste {
+            bindings = <&paste_values>;
+            key-positions = <28 25>;
+            layers = <3>;
+        };
+
+        Top {
+            bindings = <&align_top>;
+            key-positions = <17 25>;
+            layers = <3>;
+        };
+
+        Bottom {
+            bindings = <&align_bottom>;
+            key-positions = <29 25>;
+        };
+
+        Format_Paint {
+            bindings = <&none>;
+            key-positions = <13 16>;
+            layers = <3>;
         };
     };
 
@@ -106,53 +107,48 @@
         ht_kp: ht_kp {
             compatible = "zmk,behavior-hold-tap";
             label = "ht_KP";
-            bindings =
-                <&kp>,
-                <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
         };
+
         ht_sk: ht_sk {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_SK";
-            bindings =
-                <&kp>,
-                <&sk>;
+            bindings = <&kp>, <&sk>;
 
             #binding-cells = <2>;
             tapping-term-ms = <400>;
         };
+
         ht_l: ht_l {
             compatible = "zmk,behavior-hold-tap";
             label = "ht_L";
-            bindings =
-                <&to>,
-                <&to>;
+            bindings = <&to>, <&to>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
         };
+
         ht_mo_kp: ht_mo_kp {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_MO_KP";
-            bindings =
-                <&mo>,
-                <&kp>;
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <250>;
         };
+
         td_LShift: td_LShift {
             compatible = "zmk,behavior-tap-dance";
             label = "td_LSHIFT";
             #binding-cells = <0>;
-            bindings =
-                <&sk LEFT_SHIFT>,
-                <&sk LC(LEFT_SHIFT)>;
+            bindings = <&sk LEFT_SHIFT>, <&sk LC(LEFT_SHIFT)>;
         };
+
         td_colon: td_colon {
             compatible = "zmk,behavior-tap-dance";
             label = "td_COLON";
@@ -163,29 +159,26 @@
 
             tapping-term-ms = <300>;
         };
+
         td_win_ctrl: td_win_ctrl {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_WIN_CTRL";
             #binding-cells = <0>;
-            bindings =
-                <&ht_kp LCTRL LEFT_GUI>,
-                <&kp LC(LEFT_GUI)>;
+            bindings = <&ht_kp LCTRL LEFT_GUI>, <&kp LC(LEFT_GUI)>;
         };
+
         td_alt_opt: td_alt_opt {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ALT_OPT";
             #binding-cells = <0>;
-            bindings =
-                <&kp LEFT_ALT>,
-                <&kp LC(LEFT_ALT)>;
+            bindings = <&kp LEFT_ALT>, <&kp LC(LEFT_ALT)>;
         };
+
         td_tab: td_tab {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_TAB";
             #binding-cells = <0>;
-            bindings =
-                <&kp TAB>,
-                <&kp LC(TAB)>;
+            bindings = <&kp TAB>, <&kp LC(TAB)>;
         };
     };
 
@@ -196,72 +189,84 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LA(V)) &kp V &kp ENTER>;
         };
+
         align_left: align_left {
             compatible = "zmk,behavior-macro";
             label = "ALIGN_LEFT";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp A &kp L>;
         };
+
         align_centre: align_centre {
             compatible = "zmk,behavior-macro";
             label = "ALIGN_CENTRE";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp A &kp C>;
         };
+
         align_right: align_right {
             compatible = "zmk,behavior-macro";
             label = "ALIGN_RIGHT";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp A &kp R>;
         };
+
         align_top: align_top {
             compatible = "zmk,behavior-macro";
             label = "ALIGN_TOP";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp A &kp T>;
         };
+
         align_mid: align_mid {
             compatible = "zmk,behavior-macro";
             label = "ALIGN_MID";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp A &kp M>;
         };
+
         align_bottom: align_bottom {
             compatible = "zmk,behavior-macro";
             label = "ALIGN_BOTTOM";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp A &kp B>;
         };
+
         top_border: top_border {
             compatible = "zmk,behavior-macro";
             label = "TOP_BORDER";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp B &kp P>;
         };
+
         bottom_border: bottom_border {
             compatible = "zmk,behavior-macro";
             label = "BOTTOM_BORDER";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp B &kp O>;
         };
+
         top_thick_bottom_border: top_thick_bottom_border {
             compatible = "zmk,behavior-macro";
             label = "TOP_THICK_BOTTOM_BORDER";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp H &kp B &kp C>;
         };
+
         pivot: pivot {
             compatible = "zmk,behavior-macro";
             label = "PIVOT";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp N &kp V>;
         };
+
         blanks: blanks {
             compatible = "zmk,behavior-macro";
             label = "BLANKS";
             #binding-cells = <0>;
             bindings = <&kp F5 &kp LEFT_ALT &kp S &kp K &kp ENTER>;
         };
+
         clear_fill: clear_fill {
             compatible = "zmk,behavior-macro";
             label = "CLEAR_FILL";
@@ -275,28 +280,46 @@
 
         L0_ColemakDH {
             bindings = <
-&kp ESCAPE    &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P                  &ht_kp LC(B) B  &kp J           &ht_kp LC(L) L          &ht_kp LC(U) U  &ht_kp LC(Y) Y     &td_colon                   &ht_kp LC(DEL) DEL
-&td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T                  &ht_mo_kp 2 G   &ht_mo_kp 2 M   &ht_kp LC(N) N          &ht_kp LC(E) E  &ht_kp LC(I) I     &ht_kp LC(O) O              &kp SQT
-&kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D                  &ht_kp LC(V) V  &ht_kp LC(K) K  &ht_kp LC(H) H          &kp COMMA       &kp DOT            &kp SLASH                   &to 2
-&td_win_ctrl  &td_alt_opt     &sl 1           &td_LShift      &ht_kp LC(BACKSPACE) BACKSPACE  &kp ENTER                       &ht_kp LC(SPACE) SPACE  &sl 1           &kp RIGHT_CONTROL  &ht_kp LC(PAGE_UP) PAGE_UP  &ht_kp LC(PAGE_DOWN) PAGE_DOWN
+&kp ESCAPE    &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P           &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(Y) Y  &kp COLON       &ht_kp LC(DEL) DEL
+&td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T           &ht_mo_kp 2 G      &ht_mo_kp 2 M   &ht_kp LC(N) N  &ht_kp LC(E) E  &ht_kp LC(I) I  &ht_kp LC(O) O  &kp SQT
+&kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D           &ht_kp LC(V) V     &ht_kp LC(K) K  &ht_kp LC(H) H  &kp COMMA       &kp DOT         &kp SLASH       &kp BACKSPACE
+&td_win_ctrl  &td_alt_opt     &none           &to 3           &ht_kp LSHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &to 2           &none           &none
             >;
         };
 
-        L1_Char_F_Nav {
+        L1_Sys {
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN    &kp POUND         &ht_kp LC(DOLLAR) DOLLAR  &ht_kp LC(PERCENT) PERCENT  &kp F1  &kp F2  &kp F10               &kp F11                       &kp F12                 &trans
-&trans  &kp CARET        &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET         &kp BACKSLASH               &kp F3  &kp F4  &ht_kp LC(HOME) HOME  &ht_kp LC(UP_ARROW) UP_ARROW  &ht_kp LC(END) END      &trans
-&trans  &kp GRAVE        &kp F7         &kp F8            &kp F9                    &none                       &kp F5  &kp F6  &ht_kp LC(LEFT) LEFT  &ht_kp LC(DOWN) DOWN          &ht_kp LC(RIGHT) RIGHT  &to 0
-&trans  &trans           &trans         &trans            &trans                    &trans                              &trans  &trans                &trans                        &trans                  &trans
+&trans  &ht_kp LC(UP) UP      &none   &none   &none   &kp K_FORWARD  &kp F1  &kp F2  &kp F10  &kp F11  &kp F12  &trans
+&trans  &ht_kp LC(DOWN) DOWN  &none   &none   &none   &kp K_BACK     &none   &none   &none    &kp F5   &kp F6   &trans
+&trans  &none                 &none   &none   &none   &none          &none   &none   &kp F7   &kp F8   &kp F9   &trans
+&trans  &trans                &trans  &trans  &trans  &trans                 &trans  &trans   &trans   &trans   &trans
             >;
         };
 
         L2_Num {
             bindings = <
-&trans  &clear_fill  &kp RS(RA(LEFT))  &kp LC(LS(MINUS))      &kp RA(RS(RIGHT))  &kp LEFT_PARENTHESIS   &kp SLASH               &kp N7  &kp N8        &kp N9  &kp ASTERISK          &trans
-&trans  &pivot       &blanks           &kp LS(LC(AMPERSAND))  &kp UNDERSCORE     &kp RIGHT_PARENTHESIS  &ht_kp LC(MINUS) MINUS  &kp N4  &kp N5        &kp N6  &ht_kp LC(PLUS) PLUS  &trans
-&trans  &align_left  &align_centre     &align_right           &kp LCTRL          &paste_values          &kp EQUAL               &kp N1  &kp N2        &kp N3  &kp PERIOD            &to 0
-&trans  &trans       &trans            &trans                 &trans             &trans                                         &trans  &kp NUMBER_0  &trans  &trans                &trans
+&trans  &kp LEFT_BRACKET      &kp HASH        &kp EXCLAMATION  &kp PERCENT  &kp LEFT_PARENTHESIS   &kp SQT    &kp N7  &kp N8        &kp N9  &kp ASTERISK  &trans
+&trans  &kp RIGHT_BRACKET     &kp AMPERSAND   &kp DOLLAR       &kp COMMA    &kp RIGHT_PARENTHESIS  &kp MINUS  &kp N4  &kp N5        &kp N6  &kp PLUS      &kp SLASH
+&trans  &kp NON_US_BACKSLASH  &kp UNDERSCORE  &kp CARET        &kp COLON    &kp AT                 &kp EQUAL  &kp N1  &kp N2        &kp N3  &kp PERIOD    &to 0
+&trans  &trans                &trans          &trans           &mo 3        &trans                            &trans  &kp NUMBER_0  &to 0   &trans        &trans
+            >;
+        };
+
+        L3_Excel {
+            bindings = <
+&trans  &clear_fill         &kp LS(LA(LEFT))  &align_mid     &kp LS(LA(RIGHT))            &bottom_border            &kp LC(LS(MINUS))  &ht_kp LC(HOME) HOME  &ht_kp LC(UP) UP_ARROW  &ht_kp LC(END) END      &kp PAGE_UP    &trans
+&trans  &kp LC(A)           &align_left       &align_centre  &align_right                 &top_thick_bottom_border  &kp LC(LS(N7))     &ht_kp LC(LEFT) LEFT  &ht_kp LC(DOWN) DOWN    &ht_kp LC(RIGHT) RIGHT  &kp PAGE_DOWN  &trans
+&trans  &ht_kp LC(Y) LC(Z)  &kp LC(X)         &kp LC(C)      &kp LC(V)                    &top_border               &trans             &kp LS(SPACE)         &kp LC(SPACE)           &kp LC(MINUS)           &kp LC(PLUS)   &trans
+&trans  &trans              &trans            &to 0          &ht_kp LEFT_SHIFT BACKSPACE  &trans                                       &trans                &trans                  &trans                  &trans         &trans
+            >;
+        };
+
+        L4_PDF {
+            bindings = <
+&trans  &trans     &trans  &kp LA(LC(LBKT))  &kp LC(LA(RBKT))  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LA(N)  &trans  &trans            &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans            &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans            &trans            &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
