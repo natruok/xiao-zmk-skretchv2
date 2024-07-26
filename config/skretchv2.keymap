@@ -114,19 +114,10 @@
             tapping-term-ms = <400>;
         };
 
-        ht_sk: ht_sk {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_SK";
-            bindings = <&kp>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;
-        };
-
         ht_l: ht_l {
             compatible = "zmk,behavior-hold-tap";
             label = "ht_L";
-            bindings = <&to>, <&to>;
+            bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -142,36 +133,11 @@
             tapping-term-ms = <250>;
         };
 
-        td_LShift: td_LShift {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_LSHIFT";
-            #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>, <&sk LC(LEFT_SHIFT)>;
-        };
-
-        td_colon: td_colon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_COLON";
-            #binding-cells = <0>;
-            bindings =
-                <&ht_kp LC(SEMICOLON) SEMICOLON>,
-                <&kp LS(LC(SEMICOLON))>;
-
-            tapping-term-ms = <300>;
-        };
-
         td_win_ctrl: td_win_ctrl {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_WIN_CTRL";
             #binding-cells = <0>;
             bindings = <&ht_kp LCTRL LEFT_GUI>, <&kp LC(LEFT_GUI)>;
-        };
-
-        td_alt_opt: td_alt_opt {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ALT_OPT";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&kp LC(LEFT_ALT)>;
         };
 
         td_tab: td_tab {
@@ -280,10 +246,10 @@
 
         L0_ColemakDH {
             bindings = <
-&kp ESCAPE    &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P           &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(Y) Y  &kp COLON       &ht_kp LC(DEL) DEL
+&kp LEFT_ALT  &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P           &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(Y) Y  &kp COLON       &ht_kp LC(DEL) DEL
 &td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T           &ht_mo_kp 2 G      &ht_mo_kp 2 M   &ht_kp LC(N) N  &ht_kp LC(E) E  &ht_kp LC(I) I  &ht_kp LC(O) O  &kp SQT
 &kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D           &ht_kp LC(V) V     &ht_kp LC(K) K  &ht_kp LC(H) H  &kp COMMA       &kp DOT         &kp SLASH       &kp BACKSPACE
-&td_win_ctrl  &td_alt_opt     &none           &to 3           &ht_kp LSHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &to 2           &none           &none
+&td_win_ctrl  &none           &none           &ht_l 3 3       &ht_kp LSHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &ht_l 1 2       &none           &none
             >;
         };
 
@@ -300,8 +266,8 @@
             bindings = <
 &trans  &kp LEFT_BRACKET      &kp HASH        &kp EXCLAMATION  &kp PERCENT  &kp LEFT_PARENTHESIS   &kp SQT    &kp N7  &kp N8        &kp N9  &kp ASTERISK  &trans
 &trans  &kp RIGHT_BRACKET     &kp AMPERSAND   &kp DOLLAR       &kp COMMA    &kp RIGHT_PARENTHESIS  &kp MINUS  &kp N4  &kp N5        &kp N6  &kp PLUS      &kp SLASH
-&trans  &kp NON_US_BACKSLASH  &kp UNDERSCORE  &kp CARET        &kp COLON    &kp AT                 &kp EQUAL  &kp N1  &kp N2        &kp N3  &kp PERIOD    &to 0
-&trans  &trans                &trans          &trans           &mo 3        &trans                            &trans  &kp NUMBER_0  &to 0   &trans        &trans
+&trans  &kp NON_US_BACKSLASH  &kp UNDERSCORE  &kp CARET        &kp COLON    &kp AT                 &kp EQUAL  &kp N1  &kp N2        &kp N3  &kp PERIOD    &trans
+&trans  &trans                &trans          &trans           &trans       &trans                            &trans  &kp NUMBER_0  &to 0   &trans        &trans
             >;
         };
 
