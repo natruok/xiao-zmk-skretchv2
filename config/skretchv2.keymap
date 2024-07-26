@@ -3,42 +3,300 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        BT_Clr {
+            bindings = <&bt BT_CLR>;
+            key-positions = <11 37>;
+        };
+
+        BT_0 {
+            bindings = <&bt BT_SEL 0>;
+            key-positions = <0 37>;
+        };
+
+        BT_1 {
+            bindings = <&bt BT_SEL 1>;
+            key-positions = <1 37>;
+        };
+
+        BT_2 {
+            bindings = <&bt BT_SEL 2>;
+            key-positions = <2 37>;
+        };
+
+        BT_3 {
+            bindings = <&bt BT_SEL 3>;
+            key-positions = <3 37>;
+        };
+
+        Back_M {
+            bindings = <&kp RG(LEFT_BRACKET)>;
+            key-positions = <42 20>;
+        };
+
+        Fwd_M {
+            bindings = <&kp RG(RIGHT_BRACKET)>;
+            key-positions = <42 21>;
+        };
+
+        align_top {
+            bindings = <&align_top>;
+            key-positions = <25 40>;
+            layers = <2>;
+        };
+
+        align_mid {
+            bindings = <&align_mid>;
+            key-positions = <40 26>;
+            layers = <2>;
+        };
+
+        align_bottom {
+            bindings = <&align_bottom>;
+            key-positions = <40 27>;
+            layers = <2>;
+        };
+
+        top_border {
+            bindings = <&top_border>;
+            key-positions = <13 40>;
+            layers = <2>;
+        };
+
+        bottom_border {
+            bindings = <&bottom_border>;
+            key-positions = <14 40>;
+            layers = <2>;
+        };
+
+        top_thick_bottom_border {
+            bindings = <&top_thick_bottom_border>;
+            key-positions = <1 2>;
+            layers = <2>;
+        };
+
+        F_1 {
+            bindings = <&kp F1>;
+            key-positions = <13 39>;
+            layers = <0>;
+        };
+
+        F_2 {
+            bindings = <&kp F2>;
+            key-positions = <14 39>;
+            layers = <0>;
+        };
+
+        F_4 {
+            bindings = <&kp F4>;
+            key-positions = <16 39>;
+            layers = <0>;
+        };
+
+        Pivot_refresh {
+            bindings = <&kp LA(F5)>;
+            key-positions = <15 39>;
+            layers = <0>;
+        };
+    };
+
+    behaviors {
+        ht_kp: ht_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ht_KP";
+            bindings =
+                <&kp>,
+                <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+        };
+        ht_sk: ht_sk {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SK";
+            bindings =
+                <&kp>,
+                <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+        };
+        ht_l: ht_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ht_L";
+            bindings =
+                <&to>,
+                <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+        };
+        ht_mo_kp: ht_mo_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_MO_KP";
+            bindings =
+                <&mo>,
+                <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+        };
+        td_LShift: td_LShift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_LSHIFT";
+            #binding-cells = <0>;
+            bindings =
+                <&sk LEFT_SHIFT>,
+                <&sk LC(LEFT_SHIFT)>;
+        };
+        td_colon: td_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_COLON";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_kp LC(SEMICOLON) SEMICOLON>,
+                <&kp LS(LC(SEMICOLON))>;
+
+            tapping-term-ms = <300>;
+        };
+        td_win_ctrl: td_win_ctrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_WIN_CTRL";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_kp LCTRL LEFT_GUI>,
+                <&kp LC(LEFT_GUI)>;
+        };
+        td_alt_opt: td_alt_opt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_OPT";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_ALT>,
+                <&kp LC(LEFT_ALT)>;
+        };
+        td_tab: td_tab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TAB";
+            #binding-cells = <0>;
+            bindings =
+                <&kp TAB>,
+                <&kp LC(TAB)>;
+        };
+    };
+
+    macros {
+        paste_values: paste_values {
+            compatible = "zmk,behavior-macro";
+            label = "PASTE_VALUES";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(V)) &kp V &kp ENTER>;
+        };
+        align_left: align_left {
+            compatible = "zmk,behavior-macro";
+            label = "ALIGN_LEFT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp L>;
+        };
+        align_centre: align_centre {
+            compatible = "zmk,behavior-macro";
+            label = "ALIGN_CENTRE";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp C>;
+        };
+        align_right: align_right {
+            compatible = "zmk,behavior-macro";
+            label = "ALIGN_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp R>;
+        };
+        align_top: align_top {
+            compatible = "zmk,behavior-macro";
+            label = "ALIGN_TOP";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp T>;
+        };
+        align_mid: align_mid {
+            compatible = "zmk,behavior-macro";
+            label = "ALIGN_MID";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp M>;
+        };
+        align_bottom: align_bottom {
+            compatible = "zmk,behavior-macro";
+            label = "ALIGN_BOTTOM";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp A &kp B>;
+        };
+        top_border: top_border {
+            compatible = "zmk,behavior-macro";
+            label = "TOP_BORDER";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp B &kp P>;
+        };
+        bottom_border: bottom_border {
+            compatible = "zmk,behavior-macro";
+            label = "BOTTOM_BORDER";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp B &kp O>;
+        };
+        top_thick_bottom_border: top_thick_bottom_border {
+            compatible = "zmk,behavior-macro";
+            label = "TOP_THICK_BOTTOM_BORDER";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp B &kp C>;
+        };
+        pivot: pivot {
+            compatible = "zmk,behavior-macro";
+            label = "PIVOT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp N &kp V>;
+        };
+        blanks: blanks {
+            compatible = "zmk,behavior-macro";
+            label = "BLANKS";
+            #binding-cells = <0>;
+            bindings = <&kp F5 &kp LEFT_ALT &kp S &kp K &kp ENTER>;
+        };
+        clear_fill: clear_fill {
+            compatible = "zmk,behavior-macro";
+            label = "CLEAR_FILL";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp H &kp N>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        L0_ColemakDH {
             bindings = <
-&kp ESC    &kp Q      &kp W     &kp E     &kp R  &kp T      &kp Y  &kp U  &kp I      &kp O     &kp P     &kp DELETE
-&kp TAB    &kp A      &kp S     &kp D     &kp F  &kp G      &kp H  &kp J  &kp K      &kp L     &kp SEMI  &kp APOS
-&kp LSHFT  &kp Z      &kp X     &kp C     &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT   &kp UP    &kp RET
-&mo 3      &kp LCTRL  &kp LGUI  &kp LALT  &mo 1  &kp SPACE         &mo 2  &kp FSLH   &kp LEFT  &kp DOWN  &kp RIGHT
+&kp ESCAPE    &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P                  &ht_kp LC(B) B  &kp J           &ht_kp LC(L) L          &ht_kp LC(U) U  &ht_kp LC(Y) Y     &td_colon                   &ht_kp LC(DEL) DEL
+&td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T                  &ht_mo_kp 2 G   &ht_mo_kp 2 M   &ht_kp LC(N) N          &ht_kp LC(E) E  &ht_kp LC(I) I     &ht_kp LC(O) O              &kp SQT
+&kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D                  &ht_kp LC(V) V  &ht_kp LC(K) K  &ht_kp LC(H) H          &kp COMMA       &kp DOT            &kp SLASH                   &to 2
+&td_win_ctrl  &td_alt_opt     &sl 1           &td_LShift      &ht_kp LC(BACKSPACE) BACKSPACE  &kp ENTER                       &ht_kp LC(SPACE) SPACE  &sl 1           &kp RIGHT_CONTROL  &ht_kp LC(PAGE_UP) PAGE_UP  &ht_kp LC(PAGE_DOWN) PAGE_DOWN
             >;
         };
 
-        layer_1 {
+        L1_Char_F_Nav {
             bindings = <
-&kp TILDE  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS   &kp STAR   &kp LPAR  &kp RPAR  &none
-&none      &none     &none   &none     &none     &none      &none      &kp UNDER  &kp PLUS   &kp LBKT  &kp RBKT  &none
-&none      &none     &none   &none     &none     &kp BSLH   &kp PIPE   &kp MINUS  &kp EQUAL  &kp LBRC  &kp RBRC  &none
-&none      &none     &none   &none     &trans    &none                 &none      &none      &none     &none     &none
+&trans  &kp EXCLAMATION  &kp AT_SIGN    &kp POUND         &ht_kp LC(DOLLAR) DOLLAR  &ht_kp LC(PERCENT) PERCENT  &kp F1  &kp F2  &kp F10               &kp F11                       &kp F12                 &trans
+&trans  &kp CARET        &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET         &kp BACKSLASH               &kp F3  &kp F4  &ht_kp LC(HOME) HOME  &ht_kp LC(UP_ARROW) UP_ARROW  &ht_kp LC(END) END      &trans
+&trans  &kp GRAVE        &kp F7         &kp F8            &kp F9                    &none                       &kp F5  &kp F6  &ht_kp LC(LEFT) LEFT  &ht_kp LC(DOWN) DOWN          &ht_kp LC(RIGHT) RIGHT  &to 0
+&trans  &trans           &trans         &trans            &trans                    &trans                              &trans  &trans                &trans                        &trans                  &trans
             >;
         };
 
-        layer_2 {
+        L2_Num {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2   &kp N3     &kp N4     &kp N5  &kp N6  &kp N7  &kp N8      &kp N9    &kp N0        &none
-&kp SLASH  &kp N4  &kp N5   &kp N6     &kp PLUS   &none   &none   &none   &none       &none     &none         &none
-&kp STAR   &kp N7  &kp N8   &kp N9     &kp MINUS  &none   &none   &none   &none       &none     &none         &none
-&none      &kp N0  &kp DOT  &kp ENTER  &none      &none           &trans  &kp C_NEXT  &kp C_PP  &kp C_VOL_UP  &kp C_VOL_DN
-            >;
-        };
-
-        layer_3 {
-            bindings = <
-&none    &kp F1  &kp F2   &kp F3   &kp F4   &none  &none  &bt BT_CLR  &bt BT_NXT  &none      &kp PSCRN  &none
-&none    &kp F5  &kp F6   &kp F7   &kp F8   &none  &none  &none       &none       &none      &none      &none
-&kp DEL  &kp F9  &kp F10  &kp F11  &kp F12  &none  &none  &none       &none       &none      &none      &kp DEL
-&trans   &trans  &none    &trans   &none    &none         &none       &kp HOME    &kp PG_DN  &kp PG_UP  &kp END
+&trans  &clear_fill  &kp RS(RA(LEFT))  &kp LC(LS(MINUS))      &kp RA(RS(RIGHT))  &kp LEFT_PARENTHESIS   &kp SLASH               &kp N7  &kp N8        &kp N9  &kp ASTERISK          &trans
+&trans  &pivot       &blanks           &kp LS(LC(AMPERSAND))  &kp UNDERSCORE     &kp RIGHT_PARENTHESIS  &ht_kp LC(MINUS) MINUS  &kp N4  &kp N5        &kp N6  &ht_kp LC(PLUS) PLUS  &trans
+&trans  &align_left  &align_centre     &align_right           &kp LCTRL          &paste_values          &kp EQUAL               &kp N1  &kp N2        &kp N3  &kp PERIOD            &to 0
+&trans  &trans       &trans            &trans                 &trans             &trans                                         &trans  &kp NUMBER_0  &trans  &trans                &trans
             >;
         };
     };
