@@ -244,11 +244,11 @@
     keymap {
         compatible = "zmk,keymap";
 
-        L0_ColemakDH {
+        L0_ColemakEDIT {
             bindings = <
-&kp LEFT_ALT  &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P               &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(Y) Y  &kp COLON       &ht_kp LC(DEL) DEL
-&td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T               &ht_mo_kp 2 G      &ht_mo_kp 2 M   &ht_kp LC(N) N  &ht_kp LC(E) E  &ht_kp LC(I) I  &ht_kp LC(O) O  &kp SQT
-&kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D               &ht_kp LC(V) V     &ht_kp LC(K) K  &ht_kp LC(H) H  &kp COMMA       &kp DOT         &kp SLASH       &ht_kp LC(BACKSPACE) BACKSPACE
+&kp LEFT_ALT  &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P               &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(O) O  &ht_kp LC(Y) Y  &ht_kp LC(DEL) DEL
+&td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T               &ht_mo_kp 2 G      &ht_kp LC(H) H  &ht_kp LC(N) N  &ht_kp LC(E) E  &ht_kp LC(I) I  &kp COLON       &kp SQT
+&kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D               &ht_kp LC(V) V     &ht_kp LC(K) K  &ht_mo_kp 2 M   &kp COMMA       &kp DOT         &kp SLASH       &ht_kp LC(BACKSPACE) BACKSPACE
 &td_win_ctrl  &none           &none           &ht_l 3 3       &ht_kp LEFT_SHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &ht_l 1 2       &none           &none
             >;
         };
@@ -286,6 +286,15 @@
 &trans  &kp LA(N)  &trans  &trans            &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans  &trans            &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans  &trans            &trans            &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        L5_ColemakDH {
+            bindings = <
+&kp LEFT_ALT  &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P               &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(Y) Y  &kp COLON       &ht_kp LC(DEL) DEL
+&td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T               &ht_mo_kp 2 G      &ht_mo_kp 2 M   &ht_kp LC(N) N  &ht_kp LC(E) E  &ht_kp LC(I) I  &ht_kp LC(O) O  &kp SQT
+&kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D               &ht_kp LC(V) V     &ht_kp LC(K) K  &ht_kp LC(H) H  &kp COMMA       &kp DOT         &kp SLASH       &ht_kp LC(BACKSPACE) BACKSPACE
+&td_win_ctrl  &none           &none           &ht_l 3 3       &ht_kp LEFT_SHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &ht_l 1 2       &none           &none
             >;
         };
     };
