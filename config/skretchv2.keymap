@@ -244,7 +244,7 @@
         rename: rename {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp ENTER &kp LC(C) &kp ENTER &kp RIGHT &kp LC(A)>;
+            bindings = <&kp ENTER &kp LC(C) &kp ENTER &kp RIGHT &kp LC(A) &kp LA(LC(C)) &kp LC(V) &kp ENTER>;
             label = "RENAME";
         };
 
