@@ -258,7 +258,7 @@
         paste: paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(V) &kp ENTER &kp LEFT &kp DOWN>;
+            bindings = <&kp LC(V) &kp ENTER &kp LEFT &kp DOWN &kp ENTER &kp LC(C) &kp ENTER &kp RIGHT &kp LC(A)>;
             label = "PASTE";
         };
     };
