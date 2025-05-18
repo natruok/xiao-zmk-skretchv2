@@ -251,7 +251,7 @@
         rename_paste: rename_paste {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LC(C)) &kp LC(V) &kp ENTER>;
+            bindings = <&kp F15 &kp LA(LC(C))>;
             label = "RENAME_PASTE";
         };
 
