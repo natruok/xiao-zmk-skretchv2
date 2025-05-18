@@ -244,15 +244,8 @@
         rename: rename {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp ENTER &kp LC(C) &kp ENTER &kp RIGHT &kp LC(A) &kp LA(LC(C)) &kp LC(V) &kp ENTER>;
+            bindings = <&kp ENTER &kp LC(C) &kp ENTER &kp RIGHT &kp LC(A) &kp F15 &kp LC(LA(C)) &none &kp LC(V) &kp ENTER>;
             label = "RENAME";
-        };
-
-        rename_paste: rename_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LC(C)) &kp LC(V) &kp ENTER>;
-            label = "RENAME_PASTE";
         };
     };
 
@@ -264,7 +257,7 @@
 &kp ESC       &ht_kp LC(Q) Q  &ht_kp LC(W) W  &ht_kp LC(F) F  &ht_kp LC(P) P               &ht_kp LC(B) B     &kp J           &ht_kp LC(L) L  &ht_kp LC(U) U  &ht_kp LC(Y) Y  &kp COLON       &ht_kp LC(DEL) DEL
 &td_tab       &ht_kp LC(A) A  &ht_kp LC(R) R  &ht_kp LC(S) S  &ht_kp LC(T) T               &ht_mo_kp 2 G      &ht_mo_kp 2 M   &ht_kp LC(N) N  &ht_kp LC(E) E  &ht_kp LC(I) I  &ht_kp LC(O) O  &kp SQT
 &kp CAPSLOCK  &ht_kp LC(Z) Z  &ht_kp LC(X) X  &ht_kp LC(C) C  &ht_kp LC(D) D               &ht_kp LC(V) V     &ht_kp LC(K) K  &ht_kp LC(H) H  &kp COMMA       &kp DOT         &kp SLASH       &ht_kp LC(BACKSPACE) BACKSPACE
-&kp LEFT_ALT  &kp LEFT_GUI    &kp LCTRL       &ht_l 3 3       &ht_kp LEFT_SHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &ht_l 1 2       &rename         &rename_paste
+&kp LEFT_ALT  &kp LEFT_GUI    &kp LCTRL       &ht_l 3 3       &ht_kp LEFT_SHIFT BACKSPACE  &ht_mo_kp 2 ENTER                  &kp SPACE       &mo 3           &ht_l 1 2       &kp LC(LA(C))   &none
             >;
         };
 
@@ -272,7 +265,7 @@
             bindings = <
 &trans  &ht_kp LC(UP) UP      &none   &none   &none   &kp K_FORWARD  &none  &kp F15  &kp F10  &kp F11  &kp F12  &trans
 &trans  &ht_kp LC(DOWN) DOWN  &none   &none   &none   &kp K_BACK     &none  &kp F1   &kp F2   &kp F5   &kp F6   &trans
-&trans  &none                 &none   &none   &none   &none          &none  &none    &kp F7   &kp F8   &kp F9   &trans
+&trans  &none                 &none   &none   &none   &none          &none  &rename  &kp F7   &kp F8   &kp F9   &trans
 &trans  &trans                &trans  &trans  &trans  &trans                &trans   &trans   &trans   &trans   &trans
             >;
         };
